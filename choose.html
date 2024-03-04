@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Role Selection</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("images/Пин\ от\ пользователя\ Vlad\ R\ на\ доске\ Сова\ _\ Семейные\ татуировки\,\ Линейные\ чертежи\,\ Беременность\ искусство.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  form {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 40px; /* Increased padding */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center align the content */
+    width: 60%; /* Increased form width */
+    max-width: 500px; /* Maximum form width */
+  }
+
+  h2 {
+    color: #333333;
+    font-size: 24px; /* Increased font size */
+    margin-bottom: 20px; /* Increased margin */
+  }
+
+  label {
+    font-weight: bold;
+    font-size: 20px; /* Increased font size */
+  }
+
+  input[type="radio"] {
+    display: none; /* Hide the radio buttons */
+  }
+
+  .radio-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Increased margin */
+  }
+
+  .radio-label {
+    cursor: pointer;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+
+  .radio-label:hover {
+    background-color: #f1f1f1;
+  }
+
+  input[type="radio"]:checked + .radio-label {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+
+  /* Continue button styles */
+  button[type="submit"] {
+    border: 2px solid #007bff; /* Added border */
+    background-color: transparent;
+    color: #007bff;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+</style>
+</head>
+<body>
+  <form id="roleForm">
+    <h2>Select Your Role:</h2>
+    <div class="radio-group">
+      <input type="radio" id="user" name="role" value="login.html">
+      <label class="radio-label" for="user">User</label>
+      
+      <input type="radio" id="admin" name="role" value="admin.html">
+      <label class="radio-label" for="admin">Admin</label>
+    </div>
+    <button type="submit">Continue</button>
+  </form>
+
+  <script>
+    document.getElementById("roleForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the default form submission
+      var selectedRole = document.querySelector('input[name="role"]:checked').value;
+      window.location.href = selectedRole; // Redirect to the selected role page
+    });
+  </script>
+</body>
+</html>
