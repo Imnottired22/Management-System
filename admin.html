@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #21283a;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative; /* Added for positioning the back link */
+        }
+
+
+        /* Style for the back link */
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #1de5ff; /* Set color for the link */
+            font-size: 24px; /* Adjust font size as needed */
+            text-decoration: none;
+        }
+
+
+        .login-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+            width: 50%;
+            max-width: 500px;
+            margin: auto;
+            transform: scale(0); /* Initially scale down */
+            animation: zoomIn 0.5s forwards; /* Apply zoom-in animation */
+        }
+
+
+        .form-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        h1 {
+            text-align: center;
+        }
+
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1de5ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
+        button:hover {
+            background-color: #1de5ff;
+        }
+
+
+        .social-icons {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+
+        .icon {
+            margin: 0 5px;
+        }
+
+
+        .toggle-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+
+        .fadeout {
+            opacity: 0;
+            transition: opacity 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Arrow icon link to go back to main page -->
+    <a href="choose.html" class="back-link"><i class="fas fa-arrow-left"></i></a>
+
+
+    <div class="login-container">
+        <div class="form-container sign-in">
+            <form onsubmit="return validateLogin()">
+                <h1>Admin Login</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>Please use the correct information.</span>
+                <input type="text" placeholder="Username" id="username" required>
+                <input type="password" placeholder="Password" id="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        function validateLogin() {
+            var enteredUsername = document.getElementById("username").value;
+            var enteredPassword = document.getElementById("password").value;
+
+
+            // Hardcoded username and password (for demonstration purposes only)
+            var hardcodedUsername = "admin";
+            var hardcodedPassword = "CTUGNPROJECT123";
+
+
+            // Check if the entered username and password match the hardcoded values
+            if (enteredUsername === hardcodedUsername && enteredPassword === hardcodedPassword) {
+                alert("Login successful!");
+                document.querySelector(".login-container").classList.add("fadeout");
+                setTimeout(function() {
+                    window.location.href = "admin homepage.html"; // Redirect to the next page
+                }, 1000); // Delay for 1 second to allow the fadeout transition
+                return false; // Prevent form submission
+            } else {
+                alert("Invalid username or password. Please try again.");
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
