@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Creative Portfolio Website Design</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="banner">
+    <header>
+     <a href="#" class="logo">MANAGEMENT<span>SYSTEM</span></a>
+     <div class="toggle"></div>
+    </header> 
+    <img src="images/[removal.ai]_c8b19e17-b463-4b27-ad5c-7d03e2faf523-istockphoto-636910158-612x612.png" class="girl">  
+    <div class="content"> <!-- Added the closing angle bracket here -->
+      <div class="contentBx">
+        <h4>Hello,</h4>
+        <h2>We are <span>here to help you</span></h2>
+        <h3>To make the work easy.</h3>
+        <p>A newborn record system is a digital platform designed to streamline the process of collecting, recording, and managing essential information about newborn babies, aiming to simplify documentation for healthcare professionals and caregivers while ensuring secure storage and easy access to comprehensive records.</p>
+        <a href="hire_us_page.html" class="goback">Hire Us</a>
+        <a href="choose.html" class="goback">GO BACK TO MAIN PAGE</a>
+        
+      </div>
+    </div> <!-- Added the closing div tag -->
+    <ul class="sci">
+      <li><a href="#"><img src="images/facebook.png" alt="Facebook" class="facebook-icon"></a></li>
+      <li><a href="#"><img src="images/instagram.png" alt="Instagram"></a></li>
+      <li><a href="#"><img src="images/twitter.png" alt="Twitter"></a></li>
+    </ul>
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li>
+        <a href="#">Options</a>
+        <div id="submenu" class="submenu">
+          <a href="https://www.example.com/link1.html">Create</a>
+          <a href="https://www.example.com/link2.html">Read</a>
+          <a href="https://www.example.com/link3.html">Search</a>
+      </div>
+      </li>
+    </ul>
+    
+  </section>
+  <script>
+    let banner = document.querySelector('.banner');
+    let menutoggle = document.querySelector('.toggle');
+    menutoggle.onclick = function(){
+      menutoggle.classList.toggle('active');
+      banner.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
